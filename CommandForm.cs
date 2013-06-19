@@ -49,7 +49,7 @@ namespace Xel.UI
 			//this.controller = new HttpController(this.config, this.command);
 			this.controller = new EmbeddedController(this.command);
 			
-			RefreshCommandAutoCompleteSource();
+			RefreshCommands();
 		}
 		
 		private Form CreateHelper()
@@ -68,7 +68,7 @@ namespace Xel.UI
 		
 		#region Auto Complete
 		
-		private void RefreshCommandAutoCompleteSource()
+		private void RefreshCommands()
 		{
 			Trace.TraceInformation("REFRESHING...");
 			Trace.Indent();
@@ -121,7 +121,7 @@ namespace Xel.UI
 			
 			if (e.KeyCode == Keys.F5)
 			{				
-				RefreshCommandAutoCompleteSource();
+				RefreshCommands();
 			}
 		}
 		
