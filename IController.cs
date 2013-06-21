@@ -26,10 +26,12 @@ namespace Xel.UI
 	public class EmbeddedController : IController
 	{
 		private readonly string XelHome = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/.xel/";
+		private readonly Form view;
 		private readonly TextBox command;
 		
-		public EmbeddedController(TextBox command)
+		public EmbeddedController(Form view, TextBox command)
 		{
+			this.view = view;
 			this.command = command;
 			
 			RT.load("main");
@@ -40,7 +42,27 @@ namespace Xel.UI
 		public void RefreshCommands()
 		{
 			LoadCustom();
-			
+			EnumerateCommands();
+		}
+		
+		private void LoadCustom()
+		{
+			try
+			{
+				var loadCustom = RT.var("main", "load-custom");
+				loadCustom.invoke(XelHome);
+			}
+			catch (Exception e)
+			{
+				Trace.WriteLine("Failed to load user.clj : " + e.Message);
+				Trace.WriteLine(e.StackTrace);
+				
+				ErrorForm.Show(this.view, "Failed to load user.clj", e);
+			}
+		}
+		
+		private void EnumerateCommands()
+		{
 			var listCommands = RT.var("main", "list-commands");
 			IList<Object> commands = (IList<Object>) listCommands.invoke();
 			
@@ -56,20 +78,6 @@ namespace Xel.UI
 			}
 		}
 		
-		private void LoadCustom()
-		{
-			try
-			{
-				var loadCustom = RT.var("main", "load-custom");
-				loadCustom.invoke(XelHome);
-			}
-			catch (Exception e)
-			{
-				Trace.WriteLine("Failed to load user.clj : " + e.Message);
-				Trace.WriteLine(e.StackTrace);	
-			}
-		}
-		
 		public void ExecuteCommand(String command)
 		{
 			try
@@ -81,6 +89,8 @@ namespace Xel.UI
 			{
 				Trace.WriteLine(e.Message);
 				Trace.WriteLine(e.StackTrace);
+				
+				ErrorForm.Show(this.view, "Error executing command: " + command, e);
 			}
 		}
 	}

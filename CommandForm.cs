@@ -40,14 +40,14 @@ namespace Xel.UI
 			
 			bool registered = RegisterHotKey(Handle, 1, MOD_CONTROL | MOD_ALT | MOD_NOREPEAT, (int) ' ');
 			
-			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-xel M-x for the whole OS...");
+			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-xel : M-x for the whole OS...");
 			
 			//this.command.BackColor = config.BackColor;
 			//this.command.ForeColor = config.ForeColor;
 			//this.BackColor = config.BackColor;
 			
 			//this.controller = new HttpController(this.config, this.command);
-			this.controller = new EmbeddedController(this.command);
+			this.controller = new EmbeddedController(this, this.command);
 			
 			RefreshCommands();
 		}
@@ -73,7 +73,17 @@ namespace Xel.UI
 			Trace.TraceInformation("REFRESHING...");
 			Trace.Indent();
 			
+			var currentCommand = this.command.Text;
+			this.command.Enabled = false;
+			this.command.Text = "Reloading...";
+			
+			// Do this on another thread?
 			this.controller.RefreshCommands();
+			
+			this.command.Text = currentCommand;
+			this.command.Enabled = true;
+			this.command.SelectAll();
+			this.command.Focus();
 				
 			Trace.Unindent();
 			Trace.TraceInformation("REFRESHED");
