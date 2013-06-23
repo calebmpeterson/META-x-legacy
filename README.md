@@ -7,6 +7,16 @@ __M-x for the whole OS...__
 META-xel takes the idea of M-x from `emacs` and moves it into a OS-wide tool for Windows&trade;. The UI is implemented in C# and Windows Forms. All commands are implemented in Clojure CLR.
 
 
+## Usage
+
+Once running:
+
+1. Select some text in an open application such as Notepad
+1. hit `Ctrl+Alt+Space` (needs to be changed to `Alt+Space`) to focus the META-xel prompt
+1. Type `>> to-upper` and hit `ENTER`
+1. Notice that the selected text has now been fully uppercased
+
+
 ## Building
 
 From the command line cd to the root `META-xel` project directory and `build-release`. The script may need to be updated to point to the latest installed .NET runtime on your system.
@@ -21,7 +31,7 @@ After the application builds `install` a shortcut to the Windows&trade; `Startup
 
 ## Uninstalling
 
-To uninstall run `uninstall`
+Run `uninstall`
 
 
 ## Customizing the Available Commands
