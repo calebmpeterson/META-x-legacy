@@ -47,6 +47,7 @@ namespace Xel.UI
 			this.errorText.Size = new System.Drawing.Size(284, 262);
 			this.errorText.TabIndex = 0;
 			this.errorText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ErrorTextKeyUp);
+			this.errorText.Leave += new System.EventHandler(this.ErrorTextLeave);
 			// 
 			// ErrorForm
 			// 

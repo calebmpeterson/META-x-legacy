@@ -13,6 +13,9 @@
     (System.Diagnostics.Trace/WriteLine (.ToString obj))
     obj))
 
+(defn trace [obj]
+  (System.Diagnostics.Trace/WriteLine (.ToString obj)))
+
 
 
 ;;

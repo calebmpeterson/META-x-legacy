@@ -21,14 +21,10 @@ namespace Xel.UI
 			InitializeComponent();
 		}
 		
-		void ErrorFormDeactivate(object sender, EventArgs e)
-		{
-			Close();
-		}
-		
 		public static ErrorForm Show(Form owner, string description, Exception ex)
 		{
 			var form = new ErrorForm();
+			var fontHeight = form.errorText.Font.Height;
 			
 			form.errorText.AppendText(description);
 			form.errorText.AppendText(System.Environment.NewLine);
@@ -39,10 +35,14 @@ namespace Xel.UI
 			form.Owner = owner;
 			form.Left = owner.Left + 3;
 			form.Width = owner.Width - 6;
+			form.Height = Math.Min(
+					fontHeight * 15, 
+					TextRenderer.MeasureText(form.errorText.Text, form.errorText.Font).Height + fontHeight);
 			form.Top = owner.Top - 3 - form.Height;
 			
 			form.Show();
 			form.BringToFront();
+			form.Focus();
 			form.errorText.Focus();
 			
 			return form;
@@ -62,6 +62,16 @@ namespace Xel.UI
 			{
 				Close();
 			}
+		}
+		
+		void ErrorFormDeactivate(object sender, EventArgs e)
+		{
+			Close();
+		}
+		
+		void ErrorTextLeave(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }
