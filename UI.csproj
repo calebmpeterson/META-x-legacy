@@ -75,6 +75,7 @@
       <DependentUpon>CommandForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Config.cs" />
+    <Compile Include="DwmApi.cs" />
     <Compile Include="ErrorForm.cs" />
     <Compile Include="ErrorForm.Designer.cs">
       <DependentUpon>ErrorForm.cs</DependentUpon>

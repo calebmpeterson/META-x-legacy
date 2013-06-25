@@ -4,7 +4,7 @@ __M-x for the whole OS...__
 
 ## Overview
 
-META-xel takes the idea of M-x from `emacs` and moves it into a OS-wide tool for Windows&trade;. The UI is implemented in C# and Windows Forms. All commands are implemented in Clojure CLR.
+META-xel takes the basic idea of M-x from `emacs` and moves it into a OS-wide tool for Windows&trade;. The UI is implemented in C# and Windows Forms. All commands are implemented in Clojure CLR.
 
 
 ## Usage
@@ -19,7 +19,7 @@ Once running:
 
 ## Building
 
-From the command line cd to the root `META-xel` project directory and `build-release`. The script may need to be updated to point to the latest installed .NET runtime on your system.
+From the command line `cd` to the root `META-xel` project directory and `build-release`. The script may need to be updated to point to the latest installed .NET runtime on your system.
 
 The binaries can be found in `bin/Release/`.
 
@@ -38,7 +38,7 @@ Run `uninstall`
 
 Copy `user.clj` to `.xel/user.clj` in your home directory. META-xel will no longer load the default `user.clj`. Any additional Clojure (`.clj`) source files in `.xel/` can be `use`ed or `require`d from within `user.clj`.
 
-**After any changes, activate META-xel via `Ctrl+Alt+Space` and press the **F5** key. After a short pause `user.clj` will be reloaded and all new/updated commands defined in `user.clj` or any of the `require`d namespaces will become available.
+**After any changes, activate META-xel via `Ctrl+Alt+Space` and press the F5** key. After a short pause `user.clj` will be reloaded and all new/updated commands defined in `user.clj` or any of the `require`d namespaces will become available.
 
 
 ## Caveat
