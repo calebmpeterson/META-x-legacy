@@ -28,12 +28,12 @@
 (defn copy! [] (SendKeys/Send "^c"))
 (defn paste! [] (SendKeys/Send "^v"))
 
-(defn >> [f]
-  (do
+(defn >> [f & rest]
+  (letfn [(op [arg] (apply f arg rest))]
     (copy!)
     (-> (from-clipboard!)
         (trace-tap)
-        (f)
+        (op)
         (trace-tap)
         (into-clipboard!))
     (paste!)))

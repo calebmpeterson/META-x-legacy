@@ -31,7 +31,7 @@ After the application builds `install` a shortcut to the Windows&trade; `Startup
 
 ## Uninstalling
 
-Run `uninstall`
+Run `uninstall`.
 
 
 ## Customizing the Available Commands
