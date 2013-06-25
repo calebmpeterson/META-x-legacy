@@ -66,7 +66,7 @@ namespace Xel.UI
 			return form;
 		}
 		
-		#region Auto Complete
+		#region Command Refresh
 		
 		private void RefreshCommands()
 		{
@@ -77,7 +77,7 @@ namespace Xel.UI
 			this.command.Enabled = false;
 			this.command.Text = "Reloading...";
 			
-			// Do this on another thread?
+			// TODO Do this on another thread?
 			this.controller.RefreshCommands();
 			
 			this.command.Text = currentCommand;
@@ -120,10 +120,11 @@ namespace Xel.UI
 			
 			if (e.KeyCode == Keys.Return)
 			{
-				Trace.TraceInformation("EXECUTING...");
+				var command = this.command.Text;
+				Trace.TraceInformation("EXECUTING: " + command);
 				Trace.Indent();
 				
-				this.controller.ExecuteCommand(this.command.Text);
+				this.controller.ExecuteCommand(command);
 				
 				Trace.Unindent();
 				Trace.TraceInformation("EXECUTED");

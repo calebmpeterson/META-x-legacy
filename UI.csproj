@@ -97,6 +97,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="process.clj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="user.clj">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
