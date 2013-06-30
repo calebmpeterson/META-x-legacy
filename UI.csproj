@@ -76,10 +76,13 @@
     </Compile>
     <Compile Include="Config.cs" />
     <Compile Include="DwmApi.cs" />
-    <Compile Include="ErrorForm.cs" />
-    <Compile Include="ErrorForm.Designer.cs">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
+    <Compile Include="FeedbackForm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="FeedbackForm.Designer.cs">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackMessage.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
@@ -104,13 +107,19 @@
     <None Include="user.clj">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="util.clj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="util_test.clj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommandForm.resx">
       <DependentUpon>CommandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ErrorForm.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
+    <EmbeddedResource Include="FeedbackForm.resx">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />

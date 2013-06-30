@@ -57,7 +57,7 @@ namespace Xel.UI
 				Trace.WriteLine("Failed to load user.clj : " + e.Message);
 				Trace.WriteLine(e.StackTrace);
 				
-				ErrorForm.Show(this.view, "Failed to load user.clj", e);
+				FeedbackForm.Show(this.view, "Failed to load user.clj", e);
 			}
 		}
 		
@@ -84,13 +84,20 @@ namespace Xel.UI
 			{
 				var exec = RT.var("main", "exec-command");
 				var result = exec.invoke(command);
+				
+				// FIXME only show some predefined container type i.e. FeedbackMessage etc...
+				if (result != null && result.GetType() == typeof(FeedbackMessage))
+				{
+					// FIXME focus FeedbackForm
+					FeedbackForm.Show(this.view, (FeedbackMessage) result);
+				}
 			}
 			catch (Exception e)
 			{
 				Trace.WriteLine(e.Message);
 				Trace.WriteLine(e.StackTrace);
 				
-				ErrorForm.Show(this.view, "Error executing command: " + command, e);
+				FeedbackForm.Show(this.view, "Error executing command: " + command, e);
 			}
 		}
 	}

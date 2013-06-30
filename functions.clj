@@ -1,6 +1,27 @@
 (ns functions
-  (:require [clojure.string :as string])
+  (:require [clojure.string :as string]
+            [clojure.test])
   (:import [System.Windows.Forms Clipboard SendKeys]))
+
+
+
+;;
+;; Testing
+;;
+
+(defn format-test-results [ns-to-test results]
+  (with-out-str
+    (println "Test Results:" ns-to-test)
+    (println " Total: " (:test results))
+    (println " Passed:" (:pass results))
+    (println " Failed:" (:fail results))
+    (print   " Errors:" (:error results))))
+
+(defn run-tests [ns-to-test]
+  (do
+    (require ns-to-test :reload-all)
+    (Xel.UI.FeedbackMessage.
+     (format-test-results ns-to-test (clojure.test/run-tests ns-to-test)))))
 
 
 

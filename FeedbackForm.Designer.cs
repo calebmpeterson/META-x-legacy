@@ -4,7 +4,7 @@
  */
 namespace Xel.UI
 {
-	partial class ErrorForm
+	partial class FeedbackForm
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -32,41 +32,42 @@ namespace Xel.UI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.errorText = new System.Windows.Forms.TextBox();
+			this.feedbackText = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
-			// errorText
+			// feedbackText
 			// 
-			this.errorText.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.errorText.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.errorText.Location = new System.Drawing.Point(0, 0);
-			this.errorText.Multiline = true;
-			this.errorText.Name = "errorText";
-			this.errorText.ReadOnly = true;
-			this.errorText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.errorText.Size = new System.Drawing.Size(284, 262);
-			this.errorText.TabIndex = 0;
-			this.errorText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ErrorTextKeyUp);
-			this.errorText.Leave += new System.EventHandler(this.ErrorTextLeave);
+			this.feedbackText.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.feedbackText.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.feedbackText.Location = new System.Drawing.Point(0, 0);
+			this.feedbackText.Multiline = true;
+			this.feedbackText.Name = "feedbackText";
+			this.feedbackText.ReadOnly = true;
+			this.feedbackText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.feedbackText.Size = new System.Drawing.Size(284, 262);
+			this.feedbackText.TabIndex = 0;
+			this.feedbackText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FeedbackTextKeyUp);
+			this.feedbackText.Leave += new System.EventHandler(this.FeedbackTextLeave);
 			// 
-			// ErrorForm
+			// FeedbackForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
 			this.ControlBox = false;
-			this.Controls.Add(this.errorText);
+			this.Controls.Add(this.feedbackText);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "ErrorForm";
+			this.Name = "FeedbackForm";
 			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Error";
 			this.TopMost = true;
-			this.Deactivate += new System.EventHandler(this.ErrorFormDeactivate);
-			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ErrorFormKeyUp);
+			this.Deactivate += new System.EventHandler(this.FeedbackFormDeactivate);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FeedbackFormKeyUp);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.TextBox errorText;
+		private System.Windows.Forms.TextBox feedbackText;
 	}
 }
