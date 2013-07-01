@@ -36,7 +36,7 @@ Run `uninstall`.
 
 ## Customizing the Available Commands
 
-Copy `user.clj` to `.xel/user.clj` in your home directory. META-xel will no longer load the default `user.clj`. Any additional Clojure (`.clj`) source files in `.xel/` can be `use`ed or `require`d from within `user.clj`.
+Copy `user.clj` to `%UserProfile%/.xel/user.clj` in your home directory. META-xel will no longer load the default `user.clj`. Any additional Clojure (`.clj`) source files in `%UserProfile%/.xel/` can be `use`ed or `require`d from within `user.clj`.
 
 **After any changes, activate META-xel via `Ctrl+Alt+Space` and press the F5** key. After a short pause `user.clj` will be reloaded and all new/updated commands defined in `user.clj` or any of the `require`d namespaces will become available.
 

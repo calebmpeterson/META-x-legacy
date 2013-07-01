@@ -77,13 +77,15 @@
     <Compile Include="Config.cs" />
     <Compile Include="DwmApi.cs" />
     <Compile Include="FeedbackForm.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Include="FeedbackForm.Designer.cs">
       <DependentUpon>FeedbackForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FeedbackMessage.cs" />
-    <Compile Include="IController.cs" />
+    <Compile Include="IController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -94,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="environment.clj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="functions.clj">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
