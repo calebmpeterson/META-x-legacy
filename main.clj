@@ -15,10 +15,21 @@
         (read-string)
         (eval))))
 
+
+
+(defn- not-in-clojure-core [v]
+  (not (.StartsWith (str v) "#'clojure.core")))
+(defn- trim-ns-from-var [v]
+  (subs v (inc (.LastIndexOf v \/))))
+
 (defn list-commands []
-  (-> 'user
-      (ns-publics)
-      (keys)))
+  (->> 'user
+      (ns-refers)
+      (vals)
+      (filter not-in-clojure-core)
+      (map str)
+      (map trim-ns-from-var)))
+
 
 (defn load-custom [xel-home]
   (let [xel-config (str xel-home "user.clj")]

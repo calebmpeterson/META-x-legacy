@@ -40,7 +40,7 @@ namespace Xel.UI
 			
 			bool registered = RegisterHotKey(Handle, 1, MOD_CONTROL | MOD_ALT | MOD_NOREPEAT, (int) ' ');
 			
-			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-xel : M-x for the whole OS...");
+			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-xel : M-x for the whole OS... <Ctrl+Alt+Space>");
 			
 			//this.command.BackColor = config.BackColor;
 			//this.command.ForeColor = config.ForeColor;
@@ -105,8 +105,9 @@ namespace Xel.UI
 		
 		void CommandKeyUp(object sender, KeyEventArgs e)
 		{
-			
-			if (e.KeyCode == Keys.Return || e.KeyCode == Keys.Escape)
+			// Enter or Escape => Surrender Focus
+			// Ctrl+Enter => Don't Surrender Focus
+			if (!e.Control && e.KeyCode == Keys.Return || e.KeyCode == Keys.Escape)
 			{
 				if (previousForegroundWindow != null)
 				{
