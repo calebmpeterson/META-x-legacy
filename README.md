@@ -19,19 +19,23 @@ Once running:
 
 ## Building
 
-From the command line `cd` to the root `META-xel` project directory and `build-release`. The script may need to be updated to point to the latest installed .NET runtime on your system.
+From the command line `cd` to the root `META-xel` project directory and `build-release`.
+
+#### Pre-requisites
+* The script may need to be updated to point to the latest installed .NET runtime on your system.
+* `NuGet` is assumed to be on the `PATH`
 
 The binaries can be found in `bin/Release/`.
 
 
 ## Installing
 
-After the application builds `install` a shortcut to the Windows&trade; `Startup` directory to start META-xel on startup.
+After the application builds `install` a shortcut to the Windows&trade; Start Menu `Startup` directory to start META-xel on startup.
 
 
 ## Uninstalling
 
-Run `uninstall`.
+Run `uninstall` or just delete the shortcut added to the Start Menu's `Startup` directory.
 
 
 ## Customizing the Available Commands
