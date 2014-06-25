@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using clojure.lang;
 
-namespace Xel.UI
+namespace MetaX.UI
 {
 	/// <summary>
 	/// Controller Interface.
