@@ -31,8 +31,8 @@
       (map trim-ns-from-var)))
 
 
-(defn load-custom [xel-home]
-  (let [xel-config (str xel-home "user.clj")]
-    (if (File/Exists xel-config)
-      (load-file xel-config)
+(defn load-custom [meta-x-home]
+  (let [meta-x-config (str meta-x-home "user.clj")]
+    (if (File/Exists meta-x-config)
+      (load-file meta-x-config)
       (load-file "user.clj"))))
