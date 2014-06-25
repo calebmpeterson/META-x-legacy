@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ShellLib;
 
-namespace Xel.UI
+namespace MetaX.UI
 {	
 	/// <summary>
 	/// Form for entering commands.
