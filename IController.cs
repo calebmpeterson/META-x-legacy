@@ -25,7 +25,7 @@ namespace MetaX.UI
 	
 	public class EmbeddedController : IController
 	{
-		private readonly string XelHome = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/.xel/";
+		private readonly string MetaXHome = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/.meta-x/";
 		private readonly Form view;
 		private readonly TextBox command;
 		
@@ -36,7 +36,7 @@ namespace MetaX.UI
 			
 			RT.load("main");
 			
-			System.Environment.SetEnvironmentVariable(RT.ClojureLoadPathString, XelHome);
+			System.Environment.SetEnvironmentVariable(RT.ClojureLoadPathString, MetaXHome);
 		}
 		
 		public void RefreshCommands()
@@ -50,7 +50,7 @@ namespace MetaX.UI
 			try
 			{
 				var loadCustom = RT.var("main", "load-custom");
-				loadCustom.invoke(XelHome);
+				loadCustom.invoke(MetaXHome);
 			}
 			catch (Exception e)
 			{
