@@ -20,7 +20,7 @@
 (defn run-tests [ns-to-test]
   (do
     (require ns-to-test :reload-all)
-    (Xel.UI.FeedbackMessage.
+    (MetaX.UI.FeedbackMessage.
      (format-test-results ns-to-test (clojure.test/run-tests ns-to-test)))))
 
 
