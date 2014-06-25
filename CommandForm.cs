@@ -40,7 +40,7 @@ namespace MetaX.UI
 			
 			bool registered = RegisterHotKey(Handle, 1, MOD_CONTROL | MOD_ALT | MOD_NOREPEAT, (int) ' ');
 			
-			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-xel : M-x for the whole OS... <Ctrl+Alt+Space>");
+			SendMessage(command.Handle, EM_SETCUEBANNER, 0, "META-x : M-x for the whole OS... <Ctrl+Alt+Space>");
 			
 			//this.command.BackColor = config.BackColor;
 			//this.command.ForeColor = config.ForeColor;
