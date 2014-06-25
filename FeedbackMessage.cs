@@ -5,7 +5,7 @@
 using System;
 using System.Text;
 
-namespace Xel.UI
+namespace MetaX.UI
 {
 	/// <summary>
 	/// Description of FeedbackMessage.
