@@ -30,7 +30,7 @@ The binaries can be found in `bin/Release/`.
 
 ## Installing
 
-After the application builds `install` a shortcut to the Windows&trade; Start Menu `Startup` directory to start META-xel on startup.
+After the application builds `install` a shortcut to the Windows&trade; Start Menu `Startup` directory to start META-x on startup.
 
 
 ## Uninstalling
@@ -40,7 +40,7 @@ Run `uninstall` or just delete the shortcut added to the Start Menu's `Startup` 
 
 ## Customizing the Available Commands
 
-Copy `user.clj` to `%UserProfile%/.xel/user.clj` in your home directory. META-x will no longer load the default `user.clj`. Any additional Clojure (`.clj`) source files in `%UserProfile%/.xel/` can be `use`ed or `require`d from within `user.clj`.
+Copy `user.clj` to `%UserProfile%/.meta-x/user.clj` in your home directory. META-x will no longer load the default `user.clj`. Any additional Clojure (`.clj`) source files in `%UserProfile%/.meta-x/` can be `use`ed or `require`d from within `user.clj`.
 
 **After any changes, activate META-x via `Ctrl+Alt+Space` and press the F5** key. After a short pause `user.clj` will be reloaded and all new/updated commands defined in `user.clj` or any of the `require`d namespaces will become available.
 
