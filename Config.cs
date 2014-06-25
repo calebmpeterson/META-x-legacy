@@ -5,7 +5,7 @@
 using System;
 using System.Drawing;
 
-namespace Xel.UI
+namespace MetaX.UI
 {
 	/// <summary>
 	/// Configuration.
