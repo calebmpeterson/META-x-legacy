@@ -21,7 +21,7 @@ namespace UI
 		{			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Xel.UI.CommandForm());
+			Application.Run(new MetaX.UI.CommandForm());
 		}
 		
 	}
